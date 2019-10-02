@@ -61,6 +61,55 @@ let readStatus = function(arr, index){
 	}
 }
 
-readStatus(library, 2)
+//readStatus(library, 2)
 
+
+// task 5
+
+let cart = [ 
+   {
+       name: 'Shoes',
+       price: 560,
+       quantity: 4
+   },
+   {
+       name: 'Regular Tees',
+       price: 455.50,
+       quantity: 6
+   },
+   {
+       name: 'Socks',
+       price: 65.99,
+       quantity: 2
+   }];
+
+
+
+let addNewItem = function(name, price, quantity){
+					newItem = {
+								'name': name,
+								'price': price,
+								'quantity': quantity							
+							}					
+					cart.push(newItem);
+				}
+
+
+let sortItemsBy = function(key){
+					newCart = cart;
+					newCart.sort((a,b) => (a[key] > b[key])?1:-1));
+					return newCart;
+				}
+
+console.log(sortItemsBy('quantity'));
+
+
+let totalCost = function(){
+					totalCost = 0
+					cart.forEach(function(item){
+						totalCost+=item['price'];
+					})
+					return totalCost;
+				}
+console.log(totalCost());
 
